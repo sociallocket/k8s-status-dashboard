@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Centralized Login</title>
+    <base href="/">
+    <!-- Viewport settings-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Basic style -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div ng-app="app">
+
+      <navbar></navbar>
+
+      <div class="container">
+        <ui-view></ui-view>
+      </div>
+
+    </div>
+
+    <script type="text/javascript" src="js/auth0-variables.js"></script>
+    <script type="text/javascript" src="node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="node_modules/@uirouter/angularjs/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="node_modules/auth0-js/build/auth0.js"></script>
+    <script type="text/javascript" src="node_modules/angular-auth0/dist/angular-auth0.js"></script>
+    <script type="text/javascript" src="node_modules/angular-jwt/dist/angular-jwt.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/app.run.js"></script>
+    <script type="text/javascript" src="js/assets/navbar/navbar.directive.js"></script>
+    <script type="text/javascript" src="js/assets/home/home.controller.js"></script>
+    <script type="text/javascript" src="js/assets/callback/callback.controller.js"></script>
+    <script type="text/javascript" src="js/assets/auth/auth.service.js"></script>
+
+    <script type="text/javascript" src="js/assets/cluster/cluster.controller.js"></script>
+    <script type="text/javascript" src="js/assets/contact/contact.controller.js"></script>
+
+    <script type="text/javascript" src="js/assets/component/component.controller.js"></script>
+    <script type="text/javascript" src="js/assets/node/node.controller.js"></script>
+    <script type="text/javascript" src="js/assets/namespace/namespace.controller.js"></script>
+  </body>
+</html>

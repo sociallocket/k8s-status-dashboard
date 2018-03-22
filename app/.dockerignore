@@ -1,0 +1,12 @@
+package-lock.json
+src/public/package-lock.json
+node_modules
+src/public/node_modules
+.gitignore
+README.md
+src/public/js/auth0-variables.js
+local-dev/exec-personal.sh
+local-dev/exec-local-personal.sh
+local-dev/exec-app-personal.sh
+archive
+LICENSE

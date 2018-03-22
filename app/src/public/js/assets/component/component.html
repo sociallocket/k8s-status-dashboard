@@ -1,0 +1,30 @@
+<div ng-if="vm.auth.isAuthenticated()">
+	<h1>{{title}}</h1>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Component</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody>	
+				<!--<td> {{componentlist.a}} </td>-->					
+			<tr ng-repeat="component in componentlist track by $index"> 
+				<td> {{component.metadata.name}} </td>
+				<!-- <td ng-for="component in componentlist track by $index">
+					<li> {{component.conditions[$index].type}} </li>
+				</td>				 -->
+				<td ng-for="statusComponent in statusComponentlist track by $index">
+						<li> {{statusComponentlist[$index]}} </li>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div ng-if="!vm.auth.isAuthenticated()">
+	<h1>{{title}}</h1>
+	<h4>
+		You are not logged in! Please <a ng-click="vm.auth.login()">Log In</a> to continue.
+	</h4>		
+</div>

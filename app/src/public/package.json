@@ -1,0 +1,23 @@
+{
+  "name": "k8s-status-dashboard",
+  "version": "1.0.1",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "npm-check"
+  },
+  "author": "Sociallocket",
+  "license": "MIT",
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.5",
+    "angular": "^1.6.1",
+    "angular-auth0": "^3.0.0",
+    "angular-jwt": "^0.1.9",
+    "auth0-js": "^9.0.1",
+    "body-parser": "^1.18.2",
+    "bootstrap": "^3.3.7"
+  },
+  "devDependencies": {
+    "npm-check": "^5.5.2"
+  }
+}

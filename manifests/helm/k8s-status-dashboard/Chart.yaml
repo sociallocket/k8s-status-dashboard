@@ -1,0 +1,10 @@
+apiVersion: v1
+name: k8s-status-dashboard
+version: 1.0.1
+description: A K8s-Status-Dashboard application deployment
+home: https://github.com/sociallocket/k8s-status-dashboard
+sources:
+  - https://github.com/sociallocket/k8s-status-dashboard
+maintainers:
+  - name: Social Locket Team
+    email: officialsociallocket@gmail.com

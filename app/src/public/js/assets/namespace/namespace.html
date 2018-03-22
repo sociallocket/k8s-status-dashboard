@@ -1,0 +1,24 @@
+<div ng-if="vm.auth.isAuthenticated()">
+	<h1>{{message}}</h1>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Namespace</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody>					
+			<tr ng-repeat="namespaces in namespacelist track by $index"> 
+				<td> {{namespaces.metadata.name}} </td>
+				<td> {{namespaces.status.phase}} </td>
+			</tr>
+		</tbody>
+	</table>		
+</div>
+
+<div ng-if="!vm.auth.isAuthenticated()">
+	<h1>Cluster</h1>
+	<h4>
+		You are not logged in! Please <a ng-click="vm.auth.login()">Log In</a> to continue.
+	</h4>		
+</div>

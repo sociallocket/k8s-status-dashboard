@@ -1,0 +1,40 @@
+cluster: 
+namespace:
+config:
+  host:
+  auth0Domain:
+  auth0CallbackUrl:
+  
+image:
+  pullSecret: k8s-status-dashboard 
+dockerImage: 
+dockerTag: 
+dockerPort: 
+
+# Container environment variables
+# ENV:
+#   APP_FOO: bar
+
+# For production always higher than 1, because if one pod dies your app will be unavailable until the pod recovers.
+replicas: 1
+replicasMax: 10
+
+# Limits
+cpuTargetPercentage: 50
+
+ingress:
+  name: 'k8s-status-dashboard'
+  subdomain: apps
+
+  # Mark ssl as true to enable SSL on this service
+  #ssl: false
+
+  access_policy: public
+
+  # Mark metric as true to enable custom metrics for your application
+  metric: true
+
+resources:
+  requests:
+    memory: 100Mi
+    cpu: 200m

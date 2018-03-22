@@ -1,0 +1,15 @@
+{{- if .Values.replicasMax }}
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ template "fullname" . }}
+  namespace: {{ .Values.namespace }}
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1beta1
+    kind: Deployment
+    name: {{ template "fullname" . }}
+  minReplicas: {{ .Values.replicas }}
+  maxReplicas: {{ .Values.replicasMax }}
+  targetCPUUtilizationPercentage: {{ .Values.cpuTargetPercentage }}
+{{- end }}

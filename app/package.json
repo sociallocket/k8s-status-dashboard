@@ -1,0 +1,23 @@
+{
+  "name": "k8s-status-dashboard",
+  "version": "1.0.1",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "npm-check"
+  },
+  "author": "Sociallocket",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "bootstrap": "^3.3.7",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "express-jwt": "^5.3.1",
+    "request": "^2.85.0",
+    "shelljs": "^0.8.1"
+  },
+  "devDependencies": {
+    "npm-check": "^5.5.2"
+  }
+}

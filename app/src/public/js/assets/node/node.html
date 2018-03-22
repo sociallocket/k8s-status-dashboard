@@ -1,0 +1,34 @@
+<div ng-if="vm.auth.isAuthenticated()">
+	<h1>{{title}}</h1>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Node</th>
+				<th>CPU</th>
+				<th>Memory</th>
+				<th>Component</th>
+				<th>Health</th>
+				<th>Message</th>
+			</tr>
+		</thead>
+		<tbody>					
+			<tr ng-repeat="node in nodelist track by $index"> 
+				<!--<td> {{component}} </td> -->
+				<td> {{node.metadata.name}} </td>
+				<td> {{node.status.capacity.cpu}} </td>
+				<td> {{node.status.capacity.memory}} </td>
+				<td> {{node.status.conditions[$index].type}} </td>
+				<td> {{node.status.conditions[$index].status}} </td>
+				<td> ({{node.status.conditions[$index].message}}) </td>
+			</tr>
+		</tbody>
+	</table>		
+</div>
+
+
+<div ng-if="!vm.auth.isAuthenticated()">
+	<h1>{{title}}</h1>
+	<h4>
+		You are not logged in! Please <a ng-click="vm.auth.login()">Log In</a> to continue.
+	</h4>		
+</div>

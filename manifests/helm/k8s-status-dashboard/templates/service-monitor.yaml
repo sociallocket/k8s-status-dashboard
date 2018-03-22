@@ -1,0 +1,23 @@
+{{- if .Values.ingress.metric }}
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: ServiceMonitor
+metadata:
+  name: {{ template "fullname" . }}-manager
+  namespace: monitoring
+  labels:
+    app: {{ template "fullname" . }}-manager
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  jobLabel: app
+  endpoints:
+  - port: http
+    interval: 30s
+  selector:
+    matchLabels:
+      app: prometheus-{{ .Values.namespace }}-{{ template "fullname" . }}
+  namespaceSelector:
+    matchNames:
+    - {{ .Values.namespace }}
+{{- end }}

@@ -1,0 +1,12 @@
+<h4 ng-if="vm.auth.isAuthenticated()">
+  Welcome to the K8s-Status-Dashboard 
+</h4>
+<span ng-if="vm.auth.isAuthenticated()">
+<p>The K8s-Status-Dashboard is a reporting system used as part of monitoring Kubernetes Clusters.</p>
+<p>K8s-Status-Dashboard collects and dynamically reports on the status of the health of a cluster</p>
+<p>as well as various resources such as components (scheduler, controller-manager, etcd), nodes </p>
+<p>and namespaces.</p>
+</span>
+<h4 ng-if="!vm.auth.isAuthenticated()">
+You are not logged in! Please <a ng-click="vm.auth.login()">Log In</a> to continue.
+</h4>
