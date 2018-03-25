@@ -22,8 +22,6 @@
           'Authorization': "Bearer" + " " + localStorage.id_token
         }
       }).then(function (response) {
-          // console.log('components front-end got the data I requested');
-          // console.log(response.data)
           $scope.componentlist = response.data;
           $scope.component = "";
           var parseData = response.data
@@ -31,8 +29,6 @@
           parseData.forEach(function(item) {
             var temp = item.conditions;
             temp.forEach(function (item) {
-              // console.log("item");
-              // console.log(item);
               result.push(item.type);
             });      
           });

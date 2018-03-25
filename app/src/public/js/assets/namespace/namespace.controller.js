@@ -22,8 +22,6 @@
           'Authorization': "Bearer" + " " + localStorage.id_token
         }
       }).then(function (response) {
-          // console.log('Namespace front-end got the data I requested');       
-          // console.log(response.data)
           $scope.namespacelist = response.data;
           $scope.namespaces = "";
       },function (error) {

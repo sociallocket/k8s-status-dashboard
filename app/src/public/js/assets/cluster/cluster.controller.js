@@ -22,8 +22,6 @@
           'Authorization': "Bearer" + " " + localStorage.id_token
         }
       }).then(function (response) {
-          // console.log('I got the data I requested');       
-          // console.log(response.data)
           $scope.clusterlist = response.data;
           $scope.cluster = "";
       },function (error) {
