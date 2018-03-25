@@ -39,9 +39,12 @@ K8s-Status-Dashboard can run on a Kubernetes cluster. This is useful and effecti
 - `dockerImage`: `<repository>/<dockerImage-name>`
 - `dockerTag`: `<version>`
 - `dockerPort`: `<port>`
+- `pullSecret`: `<pull-secret-name>`
+- `ingress`
+-   `name`: `<ingress-name>`
 
     ```
-    $ helm upgrade k8s-status-dashboard --install "./manifests/helm/k8s-status-dashboard" --set cluster=<cluster-name> --set namespace=<namespace-name> --set config.host=<host-name> --set config.auth0Domain=<auth0-domain> --set config.auth0CallbackUrl=<auth0-callbacl-url> --set dockerImage=<docker-image> --set dockerTag=<docker-image-tag>  --set dockerPort=<docker-port>
+    $ helm upgrade k8s-status-dashboard --install "./manifests/helm/k8s-status-dashboard" --set cluster=<cluster-name> --set namespace=<namespace-name> --set config.host=<host-name> --set config.auth0Domain=<auth0-domain> --set config.auth0CallbackUrl=<auth0-callbacl-url> --set dockerImage=<docker-image> --set dockerTag=<docker-image-tag>  --set dockerPort=<docker-port> --set image.pullSecret=<pull-secret-name>  --set ingress.name=<ingress-name>
     ```
 
 ## Running K8s-Status-Dashboard Locally

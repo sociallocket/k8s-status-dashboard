@@ -6,25 +6,28 @@
 				<th>Node</th>
 				<th>CPU</th>
 				<th>Memory</th>
-				<th>Component</th>
-				<th>Health</th>
-				<th>Message</th>
+				<th>Network</th>
+				<th>Disk Space</th>
+				<th>Memory</th>
+				<th>Disk Usage</th>
+				<th>Other</th>
 			</tr>
 		</thead>
-		<tbody>					
-			<tr ng-repeat="node in nodelist track by $index"> 
-				<!--<td> {{component}} </td> -->
+		<tbody>
+			<col width="100">				
+			<tr ng-repeat="node in nodelist track by $index" >
 				<td> {{node.metadata.name}} </td>
 				<td> {{node.status.capacity.cpu}} </td>
 				<td> {{node.status.capacity.memory}} </td>
-				<td> {{node.status.conditions[$index].type}} </td>
-				<td> {{node.status.conditions[$index].status}} </td>
-				<td> ({{node.status.conditions[$index].message}}) </td>
+				<td> <span class="nodeTitle">Component</span> - {{node.status.conditions[0].type}} <hr width="400"> <span class="nodeTitle">Health</span> - {{node.status.conditions[0].status}} <hr> <span class="nodeTitle">Message</span> - {{node.status.conditions[0].message}}</td>
+				<td> <span class="nodeTitle">Component</span> - {{node.status.conditions[1].type}} <hr width="400"> <span class="nodeTitle">Health</span> - {{node.status.conditions[1].status}} <hr> <span class="nodeTitle">Message</span> - {{node.status.conditions[1].message}}</td>
+				<td> <span class="nodeTitle">Component</span> - {{node.status.conditions[2].type}} <hr width="400"> <span class="nodeTitle">Health</span> - {{node.status.conditions[2].status}} <hr> <span class="nodeTitle">Message</span> - {{node.status.conditions[2].message}}</td>
+				<td> <span class="nodeTitle">Component</span> - {{node.status.conditions[3].type}} <hr width="400"> <span class="nodeTitle">Health</span> - {{node.status.conditions[3].status}} <hr> <span class="nodeTitle">Message</span> - {{node.status.conditions[3].message}}</td>
+				<td> <span class="nodeTitle">Component</span> - {{node.status.conditions[4].type}} <hr width="400"> <span class="nodeTitle">Health</span> - {{node.status.conditions[4].status}} <hr> <span class="nodeTitle">Message</span> - {{node.status.conditions[4].message}}</td>
 			</tr>
 		</tbody>
 	</table>		
 </div>
-
 
 <div ng-if="!vm.auth.isAuthenticated()">
 	<h1>{{title}}</h1>

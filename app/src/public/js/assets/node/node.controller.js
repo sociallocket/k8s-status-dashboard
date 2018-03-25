@@ -22,8 +22,6 @@
           'Authorization': "Bearer" + " " + localStorage.id_token
         }
       }).then(function (response) {
-          // console.log('nodes front-end got the data I requested');       
-          // console.log(response.data)
           $scope.nodelist = response.data;
           $scope.nodes = "";
       },function (error) {
